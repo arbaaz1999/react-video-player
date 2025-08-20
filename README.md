@@ -1,12 +1,86 @@
-# React + Vite
+# 🎬 React Video Player with Video.js & ImageKit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project demonstrates how to integrate **Video.js** (with quality selection, playback speed, captions, and chapters) and **ImageKit’s Video Component** inside a React app.  
+It provides two different approaches for handling video playback in modern web applications.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- **ReactJS** – UI framework
+- **Vite** – Build tool for fast development
+- **JavaScript (ES6+)** – Core language
+- **Video.js** – Customizable HTML5 video player
+- **ImageKit React SDK** – For optimized video streaming & transformations
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📂 Project Structure
+
+src/  
+│  
+├── components  
+│ ├── VideoJS.jsx # Reusable Video.js wrapper component  
+│ ├── VideoJsPlayer.jsx # Player implementation with quality selector, captions & chapters  
+│ ├── ImageKitVideoPlayer.jsx # ImageKit video component with optimization  
+│  
+├── App.jsx # Entry point combining both players  
+└── main.jsx # Vite entry point
+
+---
+
+## 🎥 Features
+
+### **Video.js Player**
+
+- Custom wrapper component (`VideoJS`) to integrate with React
+- Quality selection (via `videojs-http-source-selector`)
+- Playback speed options (0.25x → 2x)
+- Captions / Subtitles support (`.vtt` files for English & Hindi)
+- Chapter navigation support
+- Poster image before video plays
+- Event handling (`waiting`, `dispose`, etc.)
+
+### **ImageKit Player**
+
+- Direct integration using `@imagekit/react`
+- Optimized video delivery from ImageKit CDN
+- Automatic quality & format transformations
+- Poster image with custom thumbnail
+- Simple configuration with `urlEndpoint` & transformations
+
+---
+
+## 📦 Installation & Setup
+
+1. Clone the repository:
+
+```bash
+   git clone https://github.com/arbaaz1999/react-video-player.git
+   cd react-video-player
+```
+
+2. Install dependencies:
+
+```bash
+    npm install
+```
+
+3. Run the development server:
+
+```bash
+    npm run dev
+```
+
+4. Open in browser:
+
+```bash
+    http://localhost:5173/
+```
+
+## 🎯 Key Learning Outcomes
+
+- How to build a reusable **React wrapper** around Video.js
+- Integrating **captions, chapters, quality selector, and playback rates** in Video.js
+- Leveraging **ImageKit React SDK** for optimized video streaming
+- Comparing traditional player integration with CDN-optimized solutions
